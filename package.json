@@ -1,7 +1,7 @@
 {
-  "name": "truffle-init-webpack",
+  "name": "EtherSketch",
   "version": "0.0.1",
-  "description": "Frontend example using truffle v3",
+  "description": "EtherSketch Example",
   "scripts": {
     "lint": "eslint ./",
     "build": "webpack",
@@ -33,5 +33,11 @@
     "web3": "^0.18.2",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.3.0"
+  },
+  "dependencies": {
+    "babel-register": "^6.24.1",
+    "graceful-fs": "^4.1.11",
+    "ipfs": "^0.24.1",
+    "jimp": "^0.2.28"
   }
 }
