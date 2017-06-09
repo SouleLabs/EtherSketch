@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "babel-register": "^6.24.1",
+    "chai": "^4.0.2",
     "graceful-fs": "^4.1.11",
     "ipfs": "^0.24.1",
     "jimp": "^0.2.28"
