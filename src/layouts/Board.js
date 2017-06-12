@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ImageContainer from "../containers/ImageContainer";
-import ButtonLink from "../components/ButtonLink";
+import SidePanel from "../components/SidePanel";
 import "./Board.css";
 
 class Board extends Component {
@@ -8,7 +8,7 @@ class Board extends Component {
     return (
       <div className="Board">
         <ImageContainer />
-        <ButtonLink to="/edit">Set Pixels</ButtonLink>
+        <SidePanel />
       </div>
     );
   }

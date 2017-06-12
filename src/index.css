@@ -2,6 +2,8 @@
  * Makes sure our app fills entire browser-window
  */
 html, body, #root {
+  color: #ddd;
+  background-color: #222;
   height: 100%;
   width: 100%;
 }
@@ -22,4 +24,9 @@ body {
 
 h1, h2, h3 {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
 }
