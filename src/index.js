@@ -6,6 +6,7 @@ import { syncHistoryWithStore } from "react-router-redux";
 import getWeb3 from "./util/getWeb3";
 
 // Layouts
+import "./index.css";
 import App from "./App";
 import Home from "./layouts/Home";
 

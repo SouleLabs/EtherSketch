@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import ImageContainer from "../containers/ImageContainer";
+import ButtonLink from "../components/ButtonLink";
 
 class Home extends Component {
   render() {
@@ -7,7 +9,8 @@ class Home extends Component {
         <div className="pure-g">
           <div className="pure-u-1-1">
             <h1>EtherSketch Home</h1>
-            <p>You should see here your main dapp screen!</p>
+            <ImageContainer />
+            <ButtonLink to="/edit">Set Pixels</ButtonLink>
           </div>
         </div>
       </main>
