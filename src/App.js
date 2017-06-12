@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-
-// Styles
+import Footer from "./components/Footer";
 import "./App.css";
 
 class App extends Component {
@@ -8,6 +7,7 @@ class App extends Component {
     return (
       <main className="App">
         {this.props.children}
+        <Footer />
       </main>
     );
   }
