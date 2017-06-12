@@ -1,0 +1,8 @@
+.Board {
+  background-color: #111;
+  background-image: linear-gradient(to bottom, #333, #111);
+  border-bottom: 4px solid #444;
+  border-top: 4px solid #444;
+  display: flex;
+  flex-grow: 4;
+}
