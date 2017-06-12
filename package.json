@@ -96,6 +96,7 @@
   },
   "babel": {
     "presets": [
+      "env",
       "react-app"
     ]
   },

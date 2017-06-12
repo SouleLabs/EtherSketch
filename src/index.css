@@ -1,5 +1,32 @@
+/**
+ * Makes sure our app fills entire browser-window
+ */
+html, body, #root {
+  color: #ddd;
+  background-color: #222;
+  height: 100%;
+  width: 100%;
+}
+
+/**
+ * WARNING: This is very importnat to ensure that all elements will have
+ * consistent size. Changing this will likely break entire system layout.
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
 }
