@@ -5,11 +5,15 @@ import "./ImagePane.css";
 class ImagePane extends Component {
   render() {
     return (
-      <div className="ImagePane">
+      <div className="ImagePane" onClick={handleClick}>
         <img alt="EtherSketch" src={ImagePaneDefault} />;{" "}
       </div>
     );
   }
+  handleClick() {
+    
+  }
+
 }
 
 export default ImagePane;
