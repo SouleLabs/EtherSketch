@@ -37,17 +37,17 @@ decisions, please, checkout those source projects as well.
 Root folders come out from a combination of both Truffle and ReactJS projects.
 The following serve for Truffle and Ethereum purpose:
 
-- contracts: Ethereum contracts definition written in Solidity;
-- migrations: Truffle migrations;
-- test: unit tests for such contracts;
+- *contracts*: Ethereum contracts definition written in Solidity;
+- *migrations*: Truffle migrations;
+- *test*: unit tests for such contracts;
 
 From the ReactJS front-end side, we have these directories:
 
-- config: Webpack and other configuration as from an ejected `create-react-app`
+- *config*: Webpack and other configuration as from an ejected `create-react-app`
   project;
-- public: public HTML and other ordinary files for the front-end
-- scripts: build and test scripts as from an ejected `create-react-app` project;
-- src: actual ReactJS source code;
+- *public*: public HTML and other ordinary files for the front-end
+- *scripts*: build and test scripts as from an ejected `create-react-app` project;
+- *src*: actual ReactJS source code;
 
 # Building and Running
 
