@@ -1,16 +1,19 @@
 import { connect } from "react-redux";
+import _ from "lodash";
 import ImagePane from "../components/ImagePane";
+import loadWallImage from "../util/loadWallImage";
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    dummy: state.dummy
+    status: _.get(state, "wall.image.status"),
+    data: _.get(state, "wall.image.data")
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    onDummy: () => {
-      console.log("You could call dispatch(dummyAction())");
+    onLoad: () => {
+      loadWallImage();
     }
   };
 };
