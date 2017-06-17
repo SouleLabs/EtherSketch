@@ -4,8 +4,6 @@ import FontAwesome from "react-fontawesome";
 import _ from "lodash";
 import "./ImagePane.css";
 
-const url = "http://www.milliondollarhomepage.com/index_files/image-map.png";
-
 class ImagePane extends Component {
   state = {
     image: null,
@@ -13,8 +11,18 @@ class ImagePane extends Component {
   };
 
   componentDidMount() {
+    this.props.onLoad();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (!_.isNil(nextProps.data)) {
+      this.prepareImage(nextProps.data);
+    }
+  }
+
+  prepareImage(data) {
     const image = new window.Image();
-    image.src = url;
+    image.src = data;
     image.onload = () => {
       this.setState({
         image: image
