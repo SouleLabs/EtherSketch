@@ -24,8 +24,10 @@ getWeb3
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter history={history}>
-      <Route path="/" component={App}>
-        <Route exact path="/" component={Home} />
+      <Route path="/">
+        <App>
+          <Route exact path="/" component={Home} />
+        </App>
       </Route>
     </BrowserRouter>
   </Provider>,
