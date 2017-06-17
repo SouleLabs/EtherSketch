@@ -96,10 +96,6 @@ class ImagePane extends Component {
       </div>
     );
   }
-  handleClick() {
-
-  }
-
 }
 
 export default ImagePane;
