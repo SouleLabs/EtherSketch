@@ -8,7 +8,6 @@ class SidePanel extends Component {
   render() {
     return (
       <div className="SidePanel">
-        <h3>Side Panel</h3>
         <Route path="/home/edit" component={EditPanel} />
         <Route path="/home/view" component={ViewPanel} />
       </div>

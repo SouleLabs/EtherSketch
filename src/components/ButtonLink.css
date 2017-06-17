@@ -8,11 +8,11 @@
   font-weight: bolder;
   height: 30px;
   line-height: 28px;
-  margin: 5px 5px 5px 0;
+  margin: 5px 0;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   text-shadow: 0px 1px 1px rgba(20, 20, 20, 0.8);
   user-select: none;
-  width: 200px;
+  min-width: 150px;
 }
