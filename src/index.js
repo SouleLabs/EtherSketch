@@ -26,7 +26,7 @@ ReactDOM.render(
     <BrowserRouter history={history}>
       <Route path="/">
         <App>
-          <Route exact path="/" component={Home} />
+          <Route path="/app" component={Home} />
         </App>
       </Route>
     </BrowserRouter>

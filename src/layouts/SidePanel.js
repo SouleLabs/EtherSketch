@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import ButtonLink from "./ButtonLink";
+import { Route } from "react-router-dom";
+import EditPanel from "./EditPanel";
+import ViewPanel from "./ViewPanel";
 import "./SidePanel.css";
 
 class SidePanel extends Component {
@@ -7,7 +9,8 @@ class SidePanel extends Component {
     return (
       <div className="SidePanel">
         <h3>Side Panel</h3>
-        <ButtonLink to="/edit">Set Pixels</ButtonLink>
+        <Route path="/app/edit" component={EditPanel} />
+        <Route path="/app/view" component={ViewPanel} />
       </div>
     );
   }

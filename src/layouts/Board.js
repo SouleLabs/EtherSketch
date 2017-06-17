@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ImageContainer from "../containers/ImageContainer";
-import SidePanel from "../components/SidePanel";
+import SidePanel from "./SidePanel";
 import "./Board.css";
 
 class Board extends Component {
