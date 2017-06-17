@@ -9,8 +9,8 @@ class SidePanel extends Component {
     return (
       <div className="SidePanel">
         <h3>Side Panel</h3>
-        <Route path="/app/edit" component={EditPanel} />
-        <Route path="/app/view" component={ViewPanel} />
+        <Route path="/home/edit" component={EditPanel} />
+        <Route path="/home/view" component={ViewPanel} />
       </div>
     );
   }

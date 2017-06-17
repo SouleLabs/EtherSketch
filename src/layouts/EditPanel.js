@@ -7,7 +7,7 @@ class EditPanel extends Component {
       <div className="EditPanel">
         <input type="text" placeHolder="link" />
         <input type="text" placeHolder="text" />
-        <ButtonLink to="/app/view">Save Pixels</ButtonLink>
+        <ButtonLink to="/home/view">Save Pixels</ButtonLink>
       </div>
     );
   }
