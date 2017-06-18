@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import getWeb3 from "./util/getWeb3";
 
@@ -24,11 +24,19 @@ getWeb3
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter history={history}>
-      <Route path="/">
-        <App>
-          <Route exact path="/" component={Home} />
-        </App>
-      </Route>
+      <Switch>
+        <Route exact path="/">
+          <Redirect to="/home/view" />
+        </Route>
+        <Route exact path="/home">
+          <Redirect to="/home/view" />
+        </Route>
+        <Route path="/">
+          <App>
+            <Route path="/home" component={Home} />
+          </App>
+        </Route>
+      </Switch>
     </BrowserRouter>
   </Provider>,
   document.getElementById("root")
