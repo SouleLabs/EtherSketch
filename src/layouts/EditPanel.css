@@ -1,0 +1,15 @@
+.EditPanel {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.EditPanel > * {
+  margin: 0 0 5px 0;
+}
+
+.EditPanel input {
+  line-height: 15px;
+  padding: 2px 5px;
+}

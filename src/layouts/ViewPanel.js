@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import ButtonLink from "../components/ButtonLink";
+import IconLink from "../components/IconLink";
 
 class ViewPanel extends Component {
   render() {
     return (
       <div className="ViewPanel">
-        <ButtonLink to="/home/edit">Set Pixels</ButtonLink>
+        <IconLink name="dollar" to="/home/edit" />
       </div>
     );
   }

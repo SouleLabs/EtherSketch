@@ -2,18 +2,6 @@
   align-items: stretch;
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  min-width: 250px;
-}
-
-.SidePanel > div {
-  align-items: stretch;
-  display: flex;
-  flex-direction: column;
-}
-
-.SidePanel input {
-  line-height: 15px;
-  margin: 5px 0;
-  padding: 2px 5px;
+  padding: 5px;
+  max-width: 250px;
 }
