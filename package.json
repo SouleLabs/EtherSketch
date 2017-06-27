@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "server": "node scripts/server.js",
     "test": "node scripts/test.js --env=jsdom"
   },
   "author": "Douglas von Kohorn",
@@ -58,6 +59,7 @@
   "dependencies": {
     "babel-register": "^6.24.1",
     "chai": "^4.0.2",
+    "express": "^4.15.3",
     "graceful-fs": "^4.1.11",
     "ipfs": "^0.24.1",
     "jimp": "^0.2.28",
