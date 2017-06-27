@@ -7,7 +7,7 @@
     "build": "node scripts/build.js",
     "server": "node scripts/server.js",
     "test": "node scripts/test.js --env=jsdom",
-    "postinstall": "npm install --only=dev &&  npm run build"
+    "heroku-postbuild": "npm install --only=dev && npm run build"
   },
   "author": "Douglas von Kohorn",
   "license": "MIT",
