@@ -5,8 +5,8 @@ import loadWallImage from "../util/loadWallImage";
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    status: _.get(state, "wall.image.status"),
-    data: _.get(state, "wall.image.data")
+    status: _.get(state, "wall.blocks.status"),
+    data: _.get(state, "wall.blocks.data")
   };
 };
 
