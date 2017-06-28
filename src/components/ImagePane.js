@@ -75,11 +75,11 @@ class ImagePane extends Component {
   get dragBound() {
     return pos => {
       let { x, y } = pos;
-      const { container, image } = this.refs;
+      const { container } = this.refs;
       const { scale } = this.state;
       const easy = 40;
-      const deltaX = container.offsetWidth - image.width() * scale - easy;
-      const deltaY = container.offsetHeight - image.height() * scale - easy;
+      const deltaX = container.offsetWidth - 1000 * scale - easy;
+      const deltaY = container.offsetHeight - 1000 * scale - easy;
       if (x > easy) {
         x = easy;
       } else if (x < deltaX) {
@@ -120,7 +120,14 @@ class ImagePane extends Component {
             <FontAwesome name="minus" />
           </div>
         </div>
-        <Stage ref="stage" scale={stageScale} width={1000} height={1000}>
+        <Stage
+          ref="stage"
+          scale={stageScale}
+          width={1000}
+          height={1000}
+          draggable
+          dragBoundFunc={this.dragBound}
+        >
           <Layer>{images}</Layer>
         </Stage>
       </div>
