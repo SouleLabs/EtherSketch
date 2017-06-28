@@ -6,28 +6,64 @@ import "./ImagePane.css";
 
 class ImagePane extends Component {
   state = {
-    image: null,
+    images: [],
     scale: 1.0
   };
+
+  constructor(props) {
+    super(props);
+    this.prepareImageBlocks(props.data);
+  }
 
   componentDidMount() {
     this.props.onLoad();
   }
 
   componentWillReceiveProps(nextProps) {
-    if (!_.isNil(nextProps.data)) {
-      this.prepareImage(nextProps.data);
+    this.prepareImageBlocks(nextProps.data);
+  }
+
+  prepareImageBlocks(data) {
+    if (_.isNil(data) || data.length === 0) {
+      this.setState({ images: [] });
+    } else {
+      var remaining = data.length;
+      var images = [];
+      _.forEach(data, block => {
+        if (_.isNil(block)) {
+          images.push(null);
+          remaining--;
+        } else {
+          const image = new window.Image();
+          image.src = block;
+          image.onload = () => {
+            if (--remaining <= 0) {
+              this.setState({ images });
+            }
+          };
+          images.push(image);
+        }
+      });
     }
   }
 
-  prepareImage(data) {
-    const image = new window.Image();
-    image.src = data;
-    image.onload = () => {
-      this.setState({
-        image: image
-      });
-    };
+  renderImages() {
+    const { images } = this.state;
+    const rendered = [];
+    for (let i = 0; i < 100; i++) {
+      for (let j = 0; j < 100; j++) {
+        const index = j * 100 + i;
+        const image = images[index];
+        if (!_.isNil(image)) {
+          const x = i * 10;
+          const y = j * 10;
+          rendered.push(
+            <Image key={index} x={x} y={y} image={images[index]} />
+          );
+        }
+      }
+    }
+    return rendered;
   }
 
   /**
@@ -39,11 +75,11 @@ class ImagePane extends Component {
   get dragBound() {
     return pos => {
       let { x, y } = pos;
-      const { container, image } = this.refs;
+      const { container } = this.refs;
       const { scale } = this.state;
       const easy = 40;
-      const deltaX = container.offsetWidth - image.width() * scale - easy;
-      const deltaY = container.offsetHeight - image.height() * scale - easy;
+      const deltaX = container.offsetWidth - 1000 * scale - easy;
+      const deltaY = container.offsetHeight - 1000 * scale - easy;
       if (x > easy) {
         x = easy;
       } else if (x < deltaX) {
@@ -73,6 +109,7 @@ class ImagePane extends Component {
   render() {
     const { scale } = this.state;
     const stageScale = { x: scale, y: scale };
+    const images = this.renderImages();
     return (
       <div ref="container" className="ImagePane">
         <div className="ImagePane-Float">
@@ -83,15 +120,15 @@ class ImagePane extends Component {
             <FontAwesome name="minus" />
           </div>
         </div>
-        <Stage ref="stage" scale={stageScale} width={1000} height={1000}>
-          <Layer>
-            <Image
-              ref="image"
-              draggable={true}
-              image={this.state.image}
-              dragBoundFunc={this.dragBound}
-            />
-          </Layer>
+        <Stage
+          ref="stage"
+          scale={stageScale}
+          width={1000}
+          height={1000}
+          draggable
+          dragBoundFunc={this.dragBound}
+        >
+          <Layer>{images}</Layer>
         </Stage>
       </div>
     );
