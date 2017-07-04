@@ -1,8 +1,8 @@
 import store from "../store";
 import _ from "lodash";
+import sample from "./sample.png";
 
 export const WALL_IMAGE_LOAD = "WALL_IMAGE_LOAD";
-export const sampleImageUrl = "http://localhost:3000//image-map.png";
 
 function wallImageLoad(status, data) {
   return {
@@ -56,7 +56,7 @@ function loadWallImage() {
   request.onabort = request.onerror = e => {
     store.dispatch(wallImageLoad("fail"));
   };
-  request.open("GET", sampleImageUrl);
+  request.open("GET", sample);
   request.overrideMimeType("text/plain; charset=x-user-defined");
   request.send();
 }
