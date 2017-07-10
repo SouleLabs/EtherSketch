@@ -4,5 +4,6 @@
   border-bottom: 4px solid #444;
   border-top: 4px solid #444;
   display: flex;
-  flex-grow: 4;
+  max-width: 1000px;
+  max-height: 1000px;
 }

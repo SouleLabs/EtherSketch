@@ -2,8 +2,8 @@
  * Makes sure our app fills entire browser-window
  */
 html, body, #root {
-  color: #ddd;
-  background-color: #222;
+  color: #403d39;
+  background-color: #fff;
   height: 100%;
   width: 100%;
 }

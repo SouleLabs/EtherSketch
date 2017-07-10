@@ -1,27 +1,66 @@
 .ButtonLink {
-  background-image: linear-gradient(to bottom, #5cb63e, #378423);
-  border: 1px solid #378423;
-  border-radius: 4px;
-  color: #eee;
+  background: #eb5e28;
+  border: 2px solid #eb5e28;
+  border-radius: 20px;
+  color: #fff;
   display: inline-block;
-  font-size: 10px;
-  font-weight: bolder;
-  height: 30px;
-  line-height: 28px;
-  margin: 5px 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  margin: 5px;
+  min-width: 150px;
+  padding: 7px 18px;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
-  text-shadow: 0px 1px 1px rgba(20, 20, 20, 0.8);
   user-select: none;
-  min-width: 150px;
+}
+
+.ButtonLink span {
+  padding-right: 10px;
+}
+
+.ButtonLink:hover {
+  background: #b33c12;
+  border-color: #b33c12;
 }
 
 .ButtonLink.Clean {
   border: 0;
   background: transparent;
+  color: #eb5e28;
+}
+
+.ButtonLink.Clean:hover {
+  color: #b33c12;
 }
 
 .ButtonLink.Default {
   background: transparent;
+  color: #eb5e28;
+}
+
+.ButtonLink.Default:hover {
+  color: #b33c12;
+}
+
+.ButtonLink.Alt {
+  background: #f3bb45;
+  border: 2px solid #f3bb45;
+  color: #fff;
+}
+
+.ButtonLink.Alt:hover {
+  background: #bb992f;
+  border: 2px solid #bb992f;
+  color: #fff;
+}
+
+.ButtonLink.Clean.Alt, .ButtonLink.Default.Alt {
+  background: transparent;
+  color: #f3bb45;
+}
+
+.ButtonLink.Clean.Alt:hover, .ButtonLink.Default.Alt:hover {
+  background: transparent;
+  color: #bb992f;
 }

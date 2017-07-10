@@ -7,7 +7,7 @@ class ViewTools extends Component {
     const editLabel = "Edit Pixels";
     return (
       <div>
-        <ButtonLink clean icon="paint-brush" to="/home/help">
+        <ButtonLink clean to="/home/help">
           {helpLabel}
         </ButtonLink>
         <ButtonLink icon="paint-brush" to="/home/edit">
