@@ -1,0 +1,21 @@
+.TagLine {
+  font-weight: normal;
+  margin: auto;
+  max-width: 450px;
+  text-align: center;
+}
+
+.TagLine h1 {
+  color: #66615b;
+  font-weight: normal;
+  font-size: 48px;
+  margin: 30px 10px 20px 10px;
+  text-align: center;
+}
+
+.TagLine p {
+  color: #9a9a9a;
+  font-size: 17px;
+  margin: 10px;
+  text-transform: uppercase;
+}
