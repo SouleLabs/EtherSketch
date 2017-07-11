@@ -5,7 +5,7 @@ import Label from "../components/Label";
 class EditTools extends Component {
   render() {
     const pickLabel = "Choose Color";
-    const saveLabel = "Save Pixels";
+    const saveLabel = "Save";
     const costLabel = "Cost: 0.004 ETH";
     return (
       <div>
