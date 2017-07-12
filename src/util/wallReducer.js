@@ -1,26 +1,35 @@
 import { WALL_IMAGE_LOAD } from "./loadWallImage";
 import _ from "lodash";
 
-const sampleImageBlock =
-  "data:image/png;base64," +
-  "iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAIAAAACUFjqAAAAQUlEQVQY062NoQ0AIBDEeijG" +
-  "YBD2n4MxcIf4EMSTYKiquPSgO7iKbFMHwGwkCg926gLI9pmml5/x9PKIy0AEpCwL4ARhH6fZ" +
-  "DUYAAAAASUVORK5CYII=";
+const WIDTH = 1000;
+const HEIGHT = 1000;
 
-function randomBlocks() {
-  const array = _.fill(Array(10000), null);
-  for (let i = 0; i <= 1000; i++) {
-    const index = _.random(0, 9999);
-    array[index] = sampleImageBlock;
+const examplePixel = {
+  red: 255,
+  green: 7,
+  blue: 7,
+  text: "This is just an example!",
+  url: "http://example.com/ethersketch"
+};
+
+function randomPixels() {
+  const pixels = [];
+  for (let i = 0; i <= WIDTH * HEIGHT / 2; i++) {
+    const sample = _.clone(examplePixel);
+    sample.x = _.random(0, WIDTH - 1);
+    sample.y = _.random(0, HEIGHT - 1);
+    pixels.push(sample);
   }
-  return array;
+  return pixels;
 }
 
 const initialState = {
   image: { status: "pending" },
-  blocks: {
+  pixels: {
     status: "success",
-    data: randomBlocks()
+    data: randomPixels(),
+    width: WIDTH,
+    height: HEIGHT
   }
 };
 
