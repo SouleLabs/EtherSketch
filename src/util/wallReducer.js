@@ -1,26 +1,41 @@
 import { WALL_IMAGE_LOAD } from "./loadWallImage";
 import _ from "lodash";
 
-const sampleImageBlock =
-  "data:image/png;base64," +
-  "iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAIAAAACUFjqAAAAQUlEQVQY062NoQ0AIBDEeijG" +
-  "YBD2n4MxcIf4EMSTYKiquPSgO7iKbFMHwGwkCg926gLI9pmml5/x9PKIy0AEpCwL4ARhH6fZ" +
-  "DUYAAAAASUVORK5CYII=";
+const WIDTH = 1000;
+const HEIGHT = 1000;
 
-function randomBlocks() {
-  const array = _.fill(Array(10000), null);
-  for (let i = 0; i <= 1000; i++) {
-    const index = _.random(0, 9999);
-    array[index] = sampleImageBlock;
+function randomPixels() {
+  const pixels = [];
+  for (let x = 0; x < WIDTH; x++) {
+    for (let y = 0; y < HEIGHT; y++) {
+      const sample = {
+        text: "This is just an example!",
+        url: "http://example.com/ethersketch"
+      };
+      sample.x = x;
+      sample.y = y;
+      if (x % 256 < 1 || x % 256 > 254 || y % 256 < 1 || y % 256 > 254) {
+        sample.red = 0;
+        sample.green = 0;
+        sample.blue = 0;
+      } else {
+        sample.red = x % 256;
+        sample.green = y % 256;
+        sample.blue = x * y % 256;
+      }
+      pixels.push(sample);
+    }
   }
-  return array;
+  return pixels;
 }
 
 const initialState = {
   image: { status: "pending" },
-  blocks: {
+  pixels: {
     status: "success",
-    data: randomBlocks()
+    data: randomPixels(),
+    width: WIDTH,
+    height: HEIGHT
   }
 };
 
