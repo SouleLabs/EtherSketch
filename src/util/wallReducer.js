@@ -4,21 +4,27 @@ import _ from "lodash";
 const WIDTH = 1000;
 const HEIGHT = 1000;
 
-const examplePixel = {
-  red: 255,
-  green: 7,
-  blue: 7,
-  text: "This is just an example!",
-  url: "http://example.com/ethersketch"
-};
-
 function randomPixels() {
   const pixels = [];
-  for (let i = 0; i <= WIDTH * HEIGHT / 2; i++) {
-    const sample = _.clone(examplePixel);
-    sample.x = _.random(0, WIDTH - 1);
-    sample.y = _.random(0, HEIGHT - 1);
-    pixels.push(sample);
+  for (let x = 0; x < WIDTH; x++) {
+    for (let y = 0; y < HEIGHT; y++) {
+      const sample = {
+        text: "This is just an example!",
+        url: "http://example.com/ethersketch"
+      };
+      sample.x = x;
+      sample.y = y;
+      if (x % 256 < 1 || x % 256 > 254 || y % 256 < 1 || y % 256 > 254) {
+        sample.red = 0;
+        sample.green = 0;
+        sample.blue = 0;
+      } else {
+        sample.red = x % 256;
+        sample.green = y % 256;
+        sample.blue = x * y % 256;
+      }
+      pixels.push(sample);
+    }
   }
   return pixels;
 }
