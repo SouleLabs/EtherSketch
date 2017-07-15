@@ -43,7 +43,7 @@ class ImagePane extends Component {
       let { x, y } = pos;
       const { container } = this.refs;
       const { scale } = this.state;
-      const easy = 40;
+      const easy = 0;
       const deltaX = container.offsetWidth - width * scale - easy;
       const deltaY = container.offsetHeight - height * scale - easy;
       if (x > easy) {
