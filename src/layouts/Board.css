@@ -1,11 +1,10 @@
 .Board {
   background-color: #111;
   background-image: linear-gradient(to bottom, #333, #111);
-  border-bottom: 4px solid #444;
-  border-top: 4px solid #444;
+  border: 1px solid #444;
   display: flex;
-  max-width: 1000px;
-  max-height: 1000px;
+  max-width: 1002px;
+  max-height: 1002px;
   position: relative;
 }
 
