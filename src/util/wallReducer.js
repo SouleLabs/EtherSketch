@@ -1,5 +1,6 @@
 import { WALL_IMAGE_LOAD } from "./loadWallImage";
 import _ from "lodash";
+import loremIpsum from "lorem-ipsum";
 
 const WIDTH = 1000;
 const HEIGHT = 1000;
@@ -8,9 +9,15 @@ function randomPixels() {
   const pixels = [];
   for (let x = 0; x < WIDTH; x++) {
     for (let y = 0; y < HEIGHT; y++) {
+      const text = loremIpsum({
+        count: 1,
+        units: "sentences",
+        sentenceLowerBound: 3,
+        sentenceUpperBound: 8
+      });
       const sample = {
-        text: "This is just an example!",
-        url: "http://example.com/ethersketch"
+        text: text,
+        url: `http://example.com/ethersketch/${x}/${y}`
       };
       sample.x = x;
       sample.y = y;
