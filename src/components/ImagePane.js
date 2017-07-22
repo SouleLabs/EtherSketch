@@ -31,6 +31,32 @@ class ImagePane extends Component {
     return canvas;
   }
 
+  findPixelAt(x, y) {
+    const { data } = this.props;
+    return _.find(data, pixel => {
+      return pixel.x === x && pixel.y === y;
+    });
+  }
+
+  get mouseMoveHandler() {
+    return params => {
+      const { stage } = this.refs;
+      const pos = stage.node.getPointerPosition();
+      const offset = {
+        x: stage.node.x(),
+        y: stage.node.y()
+      };
+      const actual = {
+        x: _.floor((pos.x - offset.x) / stage.node.scaleX()),
+        y: _.floor((pos.y - offset.y) / stage.node.scaleY())
+      };
+      const pixel = this.findPixelAt(actual.x, actual.y);
+      if (pixel !== undefined) {
+        console.log(pixel);
+      }
+    };
+  }
+
   /**
     Limits dragging of image so it doesn't go outside container bounds.
 
@@ -96,7 +122,12 @@ class ImagePane extends Component {
           dragBoundFunc={this.dragBound}
         >
           <Layer>
-            <Image x={0} y={0} image={canvas} />
+            <Image
+              x={0}
+              y={0}
+              image={canvas}
+              onMouseMove={this.mouseMoveHandler}
+            />
           </Layer>
         </Stage>
       </div>
