@@ -66,6 +66,7 @@
     "ipfs": "^0.24.1",
     "jimp": "^0.2.28",
     "konva": "^1.6.3",
+    "lorem-ipsum": "^1.0.4",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-fontawesome": "^1.6.1",
