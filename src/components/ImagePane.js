@@ -33,29 +33,27 @@ class ImagePane extends Component {
     return canvas;
   }
 
-  findPixelAt(x, y) {
-    const { data } = this.props;
-    return _.find(data, pixel => {
-      return pixel.x === x && pixel.y === y;
-    });
-  }
-
   get mouseMoveHandler() {
-    return params => {
+    const debouncedUpdate = _.debounce(params => {
+      const { data, width } = this.props;
       const { stage } = this.refs;
       const pos = stage.node.getPointerPosition();
-      const offset = {
-        x: stage.node.x(),
-        y: stage.node.y()
-      };
-      const actual = {
-        x: _.floor((pos.x - offset.x) / stage.node.scaleX()),
-        y: _.floor((pos.y - offset.y) / stage.node.scaleY())
-      };
-      const pixel = this.findPixelAt(actual.x, actual.y);
-      if (pixel !== undefined) {
+      if (!_.isNil(pos)) {
+        const offset = {
+          x: stage.node.x(),
+          y: stage.node.y()
+        };
+        const actual = {
+          x: _.floor((pos.x - offset.x) / stage.node.scaleX()),
+          y: _.floor((pos.y - offset.y) / stage.node.scaleY())
+        };
+        const pixel = data[actual.x * width + actual.y];
         this.setState({ pixel });
       }
+    }, 250);
+    return params => {
+      this.setState({ pixel: null });
+      return debouncedUpdate(params);
     };
   }
 
