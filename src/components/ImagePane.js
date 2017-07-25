@@ -23,11 +23,13 @@ class ImagePane extends Component {
     const context = canvas.getContext("2d");
     const imageData = context.createImageData(width, height);
     _.forEach(data, pixel => {
-      const index = pixel.y * width * 4 + pixel.x * 4;
-      imageData.data[index + 0] = pixel.red;
-      imageData.data[index + 1] = pixel.green;
-      imageData.data[index + 2] = pixel.blue;
-      imageData.data[index + 3] = 255;
+      if (!_.isNil(pixel)) {
+        const index = pixel.y * width * 4 + pixel.x * 4;
+        imageData.data[index + 0] = pixel.red;
+        imageData.data[index + 1] = pixel.green;
+        imageData.data[index + 2] = pixel.blue;
+        imageData.data[index + 3] = 255;
+      }
     });
     context.putImageData(imageData, 0, 0);
     return canvas;
