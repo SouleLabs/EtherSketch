@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import { Stage, Layer, Image } from "react-konva";
 import FontAwesome from "react-fontawesome";
 import _ from "lodash";
+import ImageTooltip from "./ImageTooltip";
 import "./ImagePane.css";
 
 class ImagePane extends Component {
   state = {
-    scale: 1.0
+    scale: 1.0,
+    pixel: null
   };
 
   componentDidMount() {
@@ -52,7 +54,7 @@ class ImagePane extends Component {
       };
       const pixel = this.findPixelAt(actual.x, actual.y);
       if (pixel !== undefined) {
-        console.log(pixel);
+        this.setState({ pixel });
       }
     };
   }
@@ -98,11 +100,19 @@ class ImagePane extends Component {
     };
   }
 
+  renderTooltip() {
+    const { pixel } = this.state;
+    if (!_.isNil(pixel)) {
+      return <ImageTooltip x={pixel.x} y={pixel.y}>{pixel.text}</ImageTooltip>;
+    }
+  }
+
   render() {
     const { scale } = this.state;
     const { width, height } = this.props;
     const stageScale = { x: scale, y: scale };
     const canvas = this.createCanvas();
+    const tooltip = this.renderTooltip();
     return (
       <div ref="container" className="ImagePane">
         <div className="ImagePane-Float">
@@ -129,6 +139,7 @@ class ImagePane extends Component {
               onMouseMove={this.mouseMoveHandler}
             />
           </Layer>
+          {tooltip}
         </Stage>
       </div>
     );
