@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import MediaQuery from "react-responsive";
 import "./Header.css";
 
 class Header extends Component {
@@ -10,7 +11,9 @@ class Header extends Component {
             <h1>EtherSketch</h1>
             <p>Pixel Advertising with Ethereum</p>
           </header>
-          {this.props.children}
+          <MediaQuery query="(min-device-width: 1224px)">
+            {this.props.children}
+          </MediaQuery>
         </div>
       </div>
     );
