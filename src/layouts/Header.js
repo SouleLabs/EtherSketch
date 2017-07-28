@@ -5,11 +5,13 @@ class Header extends Component {
   render() {
     return (
       <div className="Header">
-        <header>
-          <h1>EtherSketch</h1>
-          <p>Pixel Advertising with Ethereum</p>
-        </header>
-        {this.props.children}
+        <div className="Wrapper">
+          <header>
+            <h1>EtherSketch</h1>
+            <p>Pixel Advertising with Ethereum</p>
+          </header>
+          {this.props.children}
+        </div>
       </div>
     );
   }

@@ -1,6 +1,12 @@
 .Header {
   display: flex;
+  justify-content: center;
+}
+
+.Header .Wrapper {
+  display: flex;
   padding: 20px 15px;
+  width: 1002px;
 }
 
 .Header header {
