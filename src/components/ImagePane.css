@@ -1,5 +1,6 @@
 .ImagePane {
   background-color: white;
+  border: 1px solid black;
   overflow: hidden;
   position: relative;
   user-select: none;
@@ -25,4 +26,11 @@
   margin-bottom: 10px;
   text-align: center;
   width: 25px;
+}
+
+@media (max-device-width: 1224px) {
+  .ImagePane .konvajs-content {
+    min-height: 100px;
+    max-height: 70vh;
+  }
 }
