@@ -12,9 +12,9 @@
   bottom: -12%;
   content: "";
   display: block;
-  left: -12%;
+  left: 15%;
   position: absolute;
-  right: 0;
+  right: 5%;
   top: 0;
   z-index: 0;
 }
