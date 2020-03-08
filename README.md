@@ -3,7 +3,7 @@
 This is an experiment from [SouleLabs](https://github.com/SouleLabs) around
 [pixel advertising](https://en.wikipedia.org/wiki/Pixel_advertising) using an
 [Ethereum](https://www.ethereum.org/) [decentralized
-applications](https://en.wikipedia.org/wiki/Ethereum#Decentralized_applications).
+application](https://en.wikipedia.org/wiki/Ethereum#Decentralized_applications).
 
 ## Quickstart
 
